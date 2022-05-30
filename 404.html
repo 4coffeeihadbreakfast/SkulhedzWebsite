@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skulhedz - NFT collection | Skulhedz NFT collection of generative pixel art</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+    * Handles all HTTP requests
+    *
+    * 1. if a digit is not in params (?345) then display loader.html with no arguments
+    * 2. if a digit is in the params redirect to (loader.html?345) with that request
+    *
+    **/
+    const skulhedzSearch = decodeURIComponent(document.location.search);
+    // console.log(skulhedzSearch);
+    if (skulhedzSearch) {
+        const skulhedzId = skulhedzSearch.split('?')[1].trim();
+        document.location.assign('loader.html?'+skulhedzId);
+    } else {
+        document.location.assign('loader.html');
+    }
+</script>
+</body>
+</html>
