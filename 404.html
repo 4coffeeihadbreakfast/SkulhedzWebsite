@@ -15,8 +15,13 @@
     const skulhedzSearch = decodeURIComponent(document.location.search);
     // console.log(skulhedzSearch);
     if (skulhedzSearch) {
-        const skulhedzId = skulhedzSearch.split('?')[1].trim();
-        document.location.assign('loader.html?'+skulhedzId);
+        const skulhedzId = skulhedzSearch.split('?s=')[1].trim();
+        console.log(skulhedzId);
+        if (skulhedzId && (skulhedzId > 0) && (skulhedzId < 7001)){
+          document.location.assign('loader.html?'+skulhedzId);
+        } else {
+          document.location.assign('loader.html');
+        }
     } else {
         document.location.assign('loader.html');
     }
